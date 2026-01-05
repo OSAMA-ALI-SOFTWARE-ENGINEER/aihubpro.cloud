@@ -14,16 +14,15 @@ const Hero = () => {
             minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            background: 'black'
         }}>
             {/* Background Image Placeholder */}
             <div style={{
                 position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-                background: `#020617 url(${heroBg}) no-repeat center top`,
+                background: `url(${heroBg}) no-repeat center top`,
                 backgroundSize: 'cover',
-                opacity: 0.2, // Darken it heavily
-                zIndex: -2,
-                maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)'
+                zIndex: 0,
             }}></div>
 
             {/* Light Rays / Spotlights */}

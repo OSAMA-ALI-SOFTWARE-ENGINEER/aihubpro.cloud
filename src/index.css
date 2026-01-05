@@ -1,5 +1,5 @@
 :root {
-  --bg-dark: #020617; /* Slate 950 */
+  --bg-dark: #000000; /* Pure Black */
   --bg-card: rgba(30, 41, 59, 0.4); /* Slate 800 with opacity */
   --bg-glass: rgba(255, 255, 255, 0.03);
   
@@ -145,4 +145,29 @@ h6 { font-size: var(--text-h6); font-weight: 700; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+/* Bento Grid Responsive Helpers */
+.bento-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .bento-container {
+    flex-direction: row;
+  }
+}
+
+.bento-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .bento-row {
+    flex-direction: row;
+  }
 }
