@@ -78,19 +78,11 @@ const Hero = () => {
                 </div>
 
                 {/* 4 Cards Row */}
-                <div style={{ 
-                    display: 'grid', 
-                    gridTemplateColumns: 'repeat(4, 1fr)', 
-                    gap: '2rem', 
-                    width: '100%',
-                    perspective: '1000px',
-                    margin: '3rem 0'
-                }}>
+                <div className="hero-grid">
                     
                     {/* Card 1: Testimonial (Rotated 10deg) */}
-                    <div className="glass-card animated-card" style={{ 
+                    <div className="glass-card animated-card card-1" style={{ 
                         '--rotate-hover': '35deg', 
-                        transform: 'rotate(5deg) translateY(20px)',
                         padding: '2rem', textAlign: 'left', minHeight: '320px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
                         background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.08)'
                     }}>
@@ -106,8 +98,7 @@ const Hero = () => {
                     </div>
 
                      {/* Card 2: Image (Rotated -5deg) */}
-                     <div className="glass-card animated-card" style={{ 
-                        transform: 'rotate(-5deg)',
+                     <div className="glass-card animated-card card-2" style={{ 
                         padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '320px',
                         background: 'linear-gradient(145deg, #0f0f0f, #050505)',
                         border: '1px solid rgba(255,255,255,0.08)',
@@ -117,9 +108,8 @@ const Hero = () => {
                     </div>
 
                     {/* Card 3: Testimonial (Rotated 5deg) */}
-                    <div className="glass-card animated-card" style={{ 
+                    <div className="glass-card animated-card card-3" style={{ 
                         '--rotate-hover': '35deg',
-                        transform: 'rotate(5deg)',
                         padding: '2rem', textAlign: 'left', minHeight: '320px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
                         background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.08)'
                     }}>
@@ -135,8 +125,7 @@ const Hero = () => {
                     </div>
 
                     {/* Card 4: Image (Rotated -5deg) */}
-                    <div className="glass-card animated-card" style={{ 
-                        transform: 'rotate(-5deg) translateY(20px)',
+                    <div className="glass-card animated-card card-4" style={{ 
                         padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '320px',
                         background: 'linear-gradient(145deg, #0f0f0f, #050505)',
                         border: '1px solid rgba(255,255,255,0.08)',
@@ -152,14 +141,50 @@ const Hero = () => {
             <LogoMarquee />
 
              <style>{`
+                .hero-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 2rem;
+                    width: 100%;
+                    perspective: 1000px;
+                    margin: 3rem 0;
+                }
+                
+                /* Desktop Transforms */
+                .card-1 { transform: rotate(5deg) translateY(20px); }
+                .card-2 { transform: rotate(-5deg); }
+                .card-3 { transform: rotate(5deg); }
+                .card-4 { transform: rotate(-5deg) translateY(20px); }
+
                 .animated-card {
                     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27), border-color 0.3s, box-shadow 0.3s;
                 }
                 .animated-card:hover {
-                    /* No transform on hover, just shadow & border */
                     border-color: rgba(255,255,255,0.4) !important;
                     box-shadow: 0 20px 50px -10px rgba(100, 100, 255, 0.15);
                     z-index: 10;
+                }
+
+                @media (max-width: 1200px) {
+                    .hero-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        max-width: 800px;
+                    }
+                    /* Reset transforms on tablet/mobile for cleaner layout */
+                    .card-1, .card-2, .card-3, .card-4 {
+                        transform: none !important;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .hero-grid {
+                        grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                        padding: 0 1rem;
+                    }
+                    .animated-card {
+                         min-height: auto !important;
+                    }
                 }
             `}</style>
         </section>

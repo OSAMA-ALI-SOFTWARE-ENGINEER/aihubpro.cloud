@@ -1,93 +1,174 @@
-import { useState } from 'react';
-import { Check } from 'lucide-react';
+import { Shield, CheckCircle2 } from 'lucide-react';
 
 const Pricing = () => {
-    const [isYearly, setIsYearly] = useState(false);
-
     return (
-        <section id="pricing" style={{ padding: '4rem 0' }}>
-            <div className="container" style={{ textAlign: 'center' }}>
-                <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>
-                    Revolutionize Your AI Journey <br/> with AIHubPro
-                </h2>
+        <section id="pricing" style={{ padding: '6rem 0' }}>
+            <div className="container" style={{ maxWidth: '1200px' }}>
                 
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '4rem' }}>
-                    <span style={{ color: !isYearly ? 'white' : 'var(--text-secondary)' }}>Monthly</span>
-                    <div 
-                        onClick={() => setIsYearly(!isYearly)}
-                        style={{ 
-                            width: '50px', height: '26px', background: 'var(--primary)', borderRadius: '20px', 
-                            position: 'relative', cursor: 'pointer', transition: 'all 0.3s'
-                        }}
-                    >
+                {/* Header */}
+                <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
                         <div style={{ 
-                            width: '20px', height: '20px', background: 'white', borderRadius: '50%',
-                            position: 'absolute', top: '3px', left: isYearly ? '27px' : '3px', transition: 'all 0.3s'
-                        }}></div>
+                        display: 'inline-block', padding: '0.4rem 1.2rem', borderRadius: '50px', 
+                        border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.05)',
+                        fontSize: '0.85rem', color: '#e2e8f0', marginBottom: '1.5rem' 
+                    }}>
+                            Pricing
                     </div>
-                    <span style={{ color: isYearly ? 'white' : 'var(--text-secondary)' }}>Yearly</span>
+                    <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: '1.1', fontWeight: '700', marginBottom: '1.5rem' }}>
+                        Revolutionize Your AI Journey <br/> <span style={{ color: '#94a3b8' }}>with AIHubPro</span>
+                    </h2>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
+                        Cutting-edge solutions AI designed to boost sales, streamline operations, and enhance customer experience.
+                    </p>
                 </div>
 
-                <div className="grid-3">
-                    {/* Free Plan */}
-                    <div className="glass-card" style={{ padding: '2.5rem', textAlign: 'left', borderTop: '4px solid #94a3b8' }}>
-                         <div style={{ marginBottom: '2rem' }}>
-                             <div className="btn-secondary" style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem', borderRadius: '4px', display: 'inline-block', marginBottom: '1rem' }}>Basic</div>
-                             <h3 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Free</h3>
-                             <p style={{ color: 'var(--text-secondary)' }}>Forever free for individuals.</p>
-                         </div>
-                         <ul style={{ listStyle: 'none', marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                             {['1 Project', 'Basic Models', 'Community Support'].map((item, i) => (
-                                 <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                                     <Check size={16} color="var(--primary)" /> {item}
-                                 </li>
-                             ))}
-                         </ul>
-                         <button className="btn" style={{ width: '100%', background: 'transparent', border: '1px solid var(--border-glass)', color: 'white' }}>Get Started</button>
+                {/* Pricing Cards Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                    
+                    {/* Card 1: Basic (Free) */}
+                    <div style={{ 
+                        background: '#0C0C0C', borderRadius: '30px', padding: '3rem 2.5rem',
+                        border: '1px solid #333', position: 'relative', display: 'flex', flexDirection: 'column'
+                    }}>
+                        {/* Blue Shield Icon */}
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <div style={{ 
+                                width: '50px', height: '50px', background: '#3b82f6', borderRadius: '12px',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
+                            }}>
+                                <Shield fill="white" color="white" size={28} />
+                            </div>
+                        </div>
+                        
+                        <h3 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Basic</h3>
+                        <p style={{ color: '#aaa', fontSize: '0.95rem', marginBottom: '2.5rem' }}>Best for personal use.</p>
+
+                        <div style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '2.5rem' }}>Free</div>
+
+                        <button className="btn" style={{ 
+                            width: '100%', padding: '1rem', borderRadius: '12px', 
+                            textAlign:'center', placeItems:'center',
+                            background: 'rgba(255,255,255,0.05)', border: '1px solid #333', color: 'white',
+                            fontWeight: '600', marginBottom: '3rem', cursor: 'pointer'
+                        }}>
+                            Get Started
+                        </button>
+                        <div style={{width:'100%',background:'#1e1e1e', height:"1px" , marginBottom:'1rem'}}></div>
+
+                        <div style={{ borderTop: '1px solid #333', paddingTop: '2rem' }}>
+                            <h4 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '1.5rem' }}>What you will get</h4>
+                            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', padding: 0 }}>
+                                {[
+                                    'Limited AI tools access',
+                                    'Introductory tutorials',
+                                    'Community updates'
+                                ].map((item, i) => (
+                                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: '#ccc' }}>
+                                        <CheckCircle2 size={18} color="white" /> {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
-                    {/* Pro Plan */}
-                    <div className="glass-card" style={{ padding: '2.5rem', textAlign: 'left', borderTop: '4px solid var(--primary)', transform: 'scale(1.05)', position: 'relative' }}>
-                         {/* Badge */}
-                         <div style={{ 
-                             position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', 
-                             background: 'var(--primary)', padding: '0.3rem 1rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold'
-                         }}>MOST POPULAR</div>
-                         
-                         <div style={{ marginBottom: '2rem' }}>
-                             <div className="btn-secondary" style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem', borderRadius: '4px', display: 'inline-block', marginBottom: '1rem', borderColor: 'var(--primary)', color: 'var(--primary)' }}>Pro</div>
-                             <h3 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>$49<span style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>/mo</span></h3>
-                             <p style={{ color: 'var(--text-secondary)' }}>For professional developers.</p>
-                         </div>
-                         <ul style={{ listStyle: 'none', marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                             {['Unlimited Projects', 'Advanced Models', 'Priority Support', 'API Access'].map((item, i) => (
-                                 <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                                     <Check size={16} color="var(--primary)" /> {item}
-                                 </li>
-                             ))}
-                         </ul>
-                         <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Choose Pro</button>
+                        {/* Card 2: Enterprise */}
+                        <div style={{ 
+                        background: '#0C0C0C', borderRadius: '30px', padding: '3rem 2.5rem',
+                        border: '1px solid #333', position: 'relative', display: 'flex', flexDirection: 'column'
+                    }}>
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <div style={{ 
+                                width: '50px', height: '50px', background: '#3b82f6', borderRadius: '12px',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
+                            }}>
+                                <Shield fill="white" color="white" size={28} />
+                            </div>
+                        </div>
+                        
+                        <h3 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Enterprise</h3>
+                        <p style={{ color: '#aaa', fontSize: '0.95rem', marginBottom: '2.5rem' }}>For large teams & corporations.</p>
+
+                        <div style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '2.5rem', display: 'flex', alignItems: 'baseline' }}>
+                            $45 <span style={{ fontSize: '1rem', fontWeight: '400', color: '#aaa', marginLeft: '0.5rem' }}>/ per month</span>
+                        </div>
+
+                        <button className="btn" style={{ 
+                            width: '100%', padding: '1rem', borderRadius: '12px', 
+                            background: 'linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%)', border: 'none', color: 'black',
+                            fontWeight: '600', marginBottom: '3rem', cursor: 'pointer'
+                        }}>
+                            Get Started
+                        </button>
+                         <div style={{width:'100%',background:'#1e1e1e', height:"1px" , marginBottom:'1rem'}}></div>
+
+                        <div style={{ borderTop: '1px solid #333', paddingTop: '2rem' }}>
+                            <h4 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '1.5rem' }}>What you will get</h4>
+                            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', padding: 0 }}>
+                                {[
+                                    'Complete AI tools library',
+                                    'Advanced tutorials',
+                                    'Case studies access',
+                                    'Priority updates'
+                                ].map((item, i) => (
+                                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: '#ccc' }}>
+                                        <CheckCircle2 size={18} color="white" /> {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
-                    {/* Enterprise Plan */}
-                    <div className="glass-card" style={{ padding: '2.5rem', textAlign: 'left', borderTop: '4px solid #d946ef' }}>
-                         <div style={{ marginBottom: '2rem' }}>
-                             <div className="btn-secondary" style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem', borderRadius: '4px', display: 'inline-block', marginBottom: '1rem' }}>Enterprise</div>
-                             <h3 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>$299<span style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>/mo</span></h3>
-                             <p style={{ color: 'var(--text-secondary)' }}>For large scale organizations.</p>
-                         </div>
-                         <ul style={{ listStyle: 'none', marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                             {['Custom Infrastructure', 'Dedicated Support', 'SLA Guarantee', 'On-premise Option'].map((item, i) => (
-                                 <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                                     <Check size={16} color="var(--primary)" /> {item}
-                                 </li>
-                             ))}
-                         </ul>
-                         <button className="btn" style={{ width: '100%', background: 'transparent', border: '1px solid var(--border-glass)', color: 'white' }}>Contact Sales</button>
+                        {/* Card 3: Business */}
+                        <div style={{ 
+                        background: '#0C0C0C', borderRadius: '30px', padding: '3rem 2.5rem',
+                        border: '1px solid #333', position: 'relative', display: 'flex', flexDirection: 'column'
+                    }}>
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <div style={{ 
+                                width: '50px', height: '50px', background: '#3b82f6', borderRadius: '12px',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
+                            }}>
+                                <Shield fill="white" color="white" size={28} />
+                            </div>
+                        </div>
+                        
+                        <h3 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Business</h3>
+                        <p style={{ color: '#aaa', fontSize: '0.95rem', marginBottom: '2.5rem' }}>Best for business owners.</p>
+
+                        <div style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '2.5rem', display: 'flex', alignItems: 'baseline' }}>
+                            $225 <span style={{ fontSize: '1rem', fontWeight: '400', color: '#aaa', marginLeft: '0.5rem' }}>/ per month</span>
+                        </div>
+
+                        <button className="btn" style={{ 
+                            width: '100%', padding: '1rem', borderRadius: '12px', 
+                            background: 'rgba(255,255,255,0.05)', border: '1px solid #333', color: 'white',
+                            fontWeight: '600', marginBottom: '3rem', cursor: 'pointer'
+                        }}>
+                            Get Started
+                        </button>
+                         <div style={{width:'100%',background:'#1e1e1e', height:"1px" , marginBottom:'1rem'}}></div>
+
+                        <div style={{ borderTop: '1px solid #333', paddingTop: '2rem' }}>
+                            <h4 style={{ fontSize: '1.1rem', fontWeight: '600', marginBottom: '1.5rem' }}>What you will get</h4>
+                            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', padding: 0 }}>
+                                {[
+                                    'Team access',
+                                    'Enterprise use cases',
+                                    'AI adoption frameworks',
+                                    'Dedicated support'
+                                ].map((item, i) => (
+                                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: '#ccc' }}>
+                                        <CheckCircle2 size={18} color="white" /> {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
-
             </div>
         </section>
     );

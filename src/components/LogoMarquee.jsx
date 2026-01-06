@@ -10,7 +10,7 @@ const LogoMarquee = () => {
     const duplicateLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos]; 
 
     return (
-        <div style={{
+        <div className="logo-marquee-container" style={{
             width: '100vw',
             marginLeft: 'calc(50% - 50vw)', // Break out of centered parent to be full viewport width
             overflow: 'hidden',
@@ -71,6 +71,16 @@ const LogoMarquee = () => {
                 }
                 .logo-item:hover img {
                    filter: grayscale(0%) brightness(1); 
+                }
+
+                @media (max-width: 768px) {
+                    .logo-marquee-container {
+                        padding: 2rem 0 !important;
+                        margin-top: 2rem !important;
+                    }
+                    .marquee-track {
+                        gap: 4rem !important;
+                    }
                 }
             `}</style>
         </div>

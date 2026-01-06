@@ -1,7 +1,49 @@
-import { Zap, Shield, BarChart3, Globe, Cpu, Layers, CheckCircle2, MessageSquare, BookOpen, FileBadge, Star } from 'lucide-react';
+import { useState } from 'react';
+import { Zap, Shield, BarChart3, Globe, Cpu, Layers, CheckCircle2, MessageSquare, BookOpen, FileBadge, Star, Plus, Minus, HelpCircle } from 'lucide-react';
 import aboutLeftImg from '../assets/images/About_left.png';
+import automateGridImg from '../assets/icons/Automate-grid-3.png';
+import enhanceGridImg from '../assets/icons/enhance-grid-4.png';
+
+// Partnering Section Images
+import aiToolsImg from '../assets/images/why/Ai_Tools.png';
+import aiAdoptionImg from '../assets/images/why/Ai_Adoption.png';
+import aiTutorialsImg from '../assets/images/why/Ai_Tutorials.png';
+import aiUseCasesImg from '../assets/images/why/Ai_UseCases.png';
+import aiResearchImg from '../assets/images/why/Ai_Research.png';
+import aiEthicsImg from '../assets/images/why/Ai_Ethics.png';
+import commonQuestionsImg from '../assets/images/Common_Qestions_Left.png';
+import innovationBgImg from '../assets/images/Annovation/Anovation_Bg.png';
 
 const Features = () => {
+    const [openFaq, setOpenFaq] = useState(null);
+
+    const faqs = [
+        {
+            q: 'What is AIHubPro used for?',
+            a: '1. AIHubPro is a centralized platform designed to help users discover, explore, and use a curated collection of AI tools across multiple categories such as productivity, content creation, design, development, and automation. It simplifies access to AI solutions by bringing them together in one easy-to-use hub.'
+        },
+        {
+            q: 'Who is AIHubPro best suited for?',
+            a: '2. AIHubPro is best suited for entrepreneurs, developers, marketers, content creators, startups, and businesses looking to leverage AI tools to improve efficiency, creativity, and decision-making without spending time searching across multiple platforms.'
+        },
+        {
+            q: 'Do I need prior AI experience?',
+            a: '3. No prior AI experience is required to use AIHubPro. The platform is designed to be user-friendly and accessible, allowing both beginners and experienced professionals to find and use AI tools effectively.'
+        },
+        {
+            q: 'Are their any limits on the tool usage?',
+            a: '4. Tool usage limits depend on the individual tools integrated into the platform. AIHubPro itself does not impose restrictive limits, but each third-party AI tool may have its own usage policies or pricing plans.'
+        },
+        {
+            q: 'How often is content updated?',
+            a: '5. Content and tool listings on AIHubPro are updated regularly to ensure users have access to the latest, most relevant, and high-performing AI tools as the ecosystem evolves.'
+        },
+        {
+            q: 'Are the tools verified and secure?',
+            a: '6. Yes, all tools listed on AIHubPro are carefully reviewed and verified before being featured. Security, reliability, and credibility are prioritized to ensure users can explore AI solutions with confidence.'
+        }
+    ];
+
     return (
         <>
             {/* About Section - Black Background */}
@@ -66,17 +108,18 @@ const Features = () => {
             </section>
 
             {/* Features & Partnering Section */}
-            <section id="features" style={{ padding: '6rem 0' }}>
+            <section id="services" style={{ padding: '6rem 0' }}>
                 <div className="container">
                     
                     {/* Benefits Bento Grid Section */}
                 <div style={{ position: 'relative', marginBottom: '8rem' }}>
                     
-                    {/* Left Shadow Glow */}
                     <div style={{
-                        position: 'absolute', top: '20%', left: '-15%', width: '40%', height: '60%',
-                        background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
-                        filter: 'blur(80px)', zIndex: -1, pointerEvents: 'none'
+                        position: 'absolute', top: '20%', left: '-10%', width: '40%', height: '60%',
+                        borderRadius: '389.294px',
+                        background: 'rgba(96, 100, 247, 0.40)',
+                        filter: 'blur(100px)', 
+                        zIndex: -1, pointerEvents: 'none'
                     }}></div>
 
                     {/* Section Header */}
@@ -102,8 +145,21 @@ const Features = () => {
                         <div className="glass-card" style={{ 
                             flex: '1', minWidth: '300px', padding: '2.5rem', 
                             display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
-                            background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)'
+                            background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)',
+                            position: 'relative', overflow: 'hidden'
                         }}>
+                            {/* Inner Bottom Shadow */}
+                            <div style={{
+                                position: 'absolute',
+                                left: '74px',
+                                bottom: '-123px',
+                                width: '300px', height: '300px',
+                                borderRadius: '283px',
+                                background: '#344BFD',
+                                filter: 'blur(100px)',
+                                pointerEvents: 'none',
+                                zIndex: 0
+                            }}></div>
                            <div>
                                 <h3 style={{ fontSize: '1.75rem', marginBottom: '1rem', fontWeight: '600' }}>Centralized AI Resources</h3>
                                 <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontSize: '1rem', lineHeight: '1.6' }}>
@@ -147,7 +203,7 @@ const Features = () => {
                                     </p>
                                     <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                                         {/* Icon 1 */}
-                                        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="100" height="100" rx="50" fill="url(#paint0_linear_827_1795)"/>
                                             <path d="M31.6868 59.808L42.6716 43.6775L50.5852 49.0693L63.9122 29.5034" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                                             <path d="M66.5594 34.2521C66.3192 31.5041 66.0379 30.0216 65.2771 27.4952C62.6482 27.716 61.1689 27.9967 58.5201 28.7774M45.8622 70.0321L43.0774 55.3571M59.3856 67.4658L56.6007 52.7908M33.0537 67.7097L33.9244 72.2975L72.7809 64.9237L68.879 44.3625" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -161,7 +217,7 @@ const Features = () => {
                                         </svg>
 
                                         {/* Icon 2 */}
-                                        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="100" height="100" rx="50" fill="url(#paint0_linear_827_1799)"/>
                                             <path d="M48.6827 56.5718L46.8174 66.3963" stroke="white" strokeWidth="3" strokeLinecap="round"/>
                                             <path d="M41.4107 30.3249C38.2062 29.061 36.604 28.429 34.9548 29.374C33.3099 30.3178 32.9357 32.2886 32.1874 36.2302L29.4981 50.3951C28.8139 53.9987 28.4718 55.8006 29.1678 57.0992C29.8622 58.3954 31.7901 59.1564 35.6499 60.679C39.0871 62.036 41.6662 63.6453 43.4755 65.1166C45.2567 66.5642 46.1456 67.2867 46.6309 67.3789C47.1162 67.471 48.21 67.1249 50.3939 66.4301C52.6182 65.7266 55.608 65.1726 59.3053 65.1702C63.4506 65.1673 65.5252 65.1663 66.6464 64.2147C67.7699 63.2615 68.1119 61.4597 68.7961 57.8561L71.4854 43.6911C72.2338 39.7495 72.6079 37.7787 71.4234 36.2978C70.2352 34.8141 68.5129 34.8149 65.0681 34.8164" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -176,7 +232,7 @@ const Features = () => {
                                         </svg>
 
                                         {/* Icon 3 */}
-                                        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="100" height="100" rx="50" fill="url(#paint0_linear_827_1804)"/>
                                             <path d="M31.5114 57.4509L41.1886 55.6145M29.1685 45.105L63.9979 38.4954M45.886 58.6109L48.0326 69.9225M55.807 46.5257C53.8414 36.1677 48.6491 28.4544 44.2099 29.2969C39.7708 30.1393 37.7662 39.2183 39.7318 49.5763C40.1367 51.7096 40.6787 53.7313 41.3227 55.589" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                                             <path d="M66.8468 47.345C66.8112 46.3997 66.703 45.4488 66.5221 44.4922C64.5564 34.1342 54.5668 27.3313 44.2089 29.297C33.8509 31.2626 27.048 41.2522 29.0137 51.6102C30.4033 58.9328 35.803 64.4782 42.5075 66.4049" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -192,7 +248,7 @@ const Features = () => {
                                         </svg>
 
                                         {/* Icon 4 */}
-                                        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="100" height="100" rx="50" fill="url(#paint0_linear_827_1810)"/>
                                             <path d="M44.8155 70.9795C36.1548 69.3352 31.8255 68.5133 29.7357 64.8359C27.6452 61.1629 28.6128 56.0664 30.5472 45.8776C32.4816 35.6888 33.4488 30.5944 36.7409 27.9388C40.033 25.2833 44.3618 26.1074 53.0225 27.7517C61.6832 29.396 66.0125 30.2179 68.1026 33.8931C69.7841 36.8547 69.4868 40.7327 68.2972 47.4464M42.9955 39.2838L58.1253 42.1562M40.9438 50.0907L47.4279 51.3218" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                                             <path d="M63.9424 65.8887C65.3604 65.2196 66.5302 64.1187 67.2841 62.7438C68.038 61.369 68.3373 59.7907 68.1391 58.2353C67.9409 56.6799 67.2554 55.2272 66.1808 54.0853C65.1063 52.9435 63.6978 52.1711 62.1573 51.8789L61.6148 51.7759C60.0744 51.4836 58.4811 51.6864 57.0632 52.3553C55.6452 53.0241 54.4753 54.1246 53.7211 55.4991C52.9669 56.8735 52.6672 58.4515 52.8649 60.0068C53.0625 61.5621 53.7474 63.0149 54.8214 64.157M54.8214 64.157C55.8943 65.3014 57.3034 66.0748 58.8449 66.3653L59.3852 66.4679C60.9259 66.7625 62.5204 66.5594 63.9381 65.8879L64.4452 70.0933C64.6378 71.6974 64.7362 72.4998 64.5798 72.9583C64.2573 73.9137 63.3197 74.4881 62.3744 74.3131C61.9205 74.2269 61.3091 73.7436 60.085 72.7722C59.5597 72.3545 59.2988 72.1482 59.0177 72.0008C58.4459 71.7043 57.7997 71.5816 57.1589 71.6479C56.8434 71.6821 56.5229 71.778 55.8832 71.9745C54.3883 72.4297 53.6419 72.6574 53.1884 72.5691C52.2447 72.3855 51.5829 71.5074 51.633 70.5003C51.6577 70.0168 52.039 69.3054 52.8083 67.884L54.8214 64.157Z" stroke="white" strokeWidth="3"/>
@@ -236,33 +292,34 @@ const Features = () => {
                             <div className="bento-row">
                                 
                                 {/* Card 3 (33%) - Automated Updates */}
-                                <div className="glass-card" style={{ flex: '1', padding: '2rem', background: 'rgba(255,255,255,0.03)' }}>
-                                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: '600' }}>Automated <br/> Updates to Tools</h3>
-                                     <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
-                                         <div style={{ 
-                                             width: '100px', height: '80px', background: 'rgba(0,0,0,0.3)', borderRadius: '12px', 
-                                             border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column',
-                                             alignItems: 'center', justifyContent: 'center', gap: '8px'
-                                         }}>
-                                            <div style={{ width: '60%', height: '8px', background: '#3b82f6', borderRadius: '4px' }}></div>
-                                            <div style={{ width: '60%', height: '8px', background: 'rgba(255,255,255,0.2)', borderRadius: '4px' }}></div>
-                                         </div>
+                                <div className="glass-card" style={{ 
+                                    flex: '1', padding: '2rem', background: 'rgba(255,255,255,0.03)',
+                                    position: 'relative', overflow: 'hidden', minHeight: '320px'
+                                }}>
+                                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: '600', position: 'relative', zIndex: 1 }}>Automated <br/> Updates to Tools</h3>
+                                     <div style={{ 
+                                         position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)',
+                                         width: '100%', display: 'flex', justifyContent: 'center'
+                                     }}>
+                                         <img src={automateGridImg} alt="Automated Updates" style={{ width: '80%', height: 'auto', objectFit: 'contain' }} />
                                      </div>
                                 </div>
 
                                 {/* Card 4 (66%) - Enhanced Productivity */}
-                                <div className="glass-card" style={{ flex: '2', padding: '2.5rem', background: 'rgba(255,255,255,0.03)' }}>
-                                    <h3 style={{ fontSize: '1.5rem', marginBottom: '0.8rem', fontWeight: '600' }}>Enhanced Productivity</h3>
-                                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '2rem' }}>
+                                <div className="glass-card" style={{ 
+                                    flex: '2', padding: '2.5rem', background: 'rgba(255,255,255,0.03)',
+                                    position: 'relative', overflow: 'hidden'
+                                }}>
+                                    <h3 style={{ fontSize: '1.5rem', marginBottom: '0.8rem', fontWeight: '600', position: 'relative', zIndex: 1 }}>Enhanced Productivity</h3>
+                                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '2rem', position: 'relative', zIndex: 1, maxWidth: '60%' }}>
                                         Apply AI faster with proven workflows and ready-to-use solutions.
                                     </p>
-                                    {/* Mock UI Input */}
-                                    <div style={{ background: 'rgba(0,0,0,0.3)', padding: '1rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                                        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                                            <div style={{ width: '24px', height: '24px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)' }}></div>
-                                             <div style={{ width: '40%', height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px' }}></div>
-                                             <div style={{ width: '20%', height: '8px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginLeft: 'auto' }}></div>
-                                        </div>
+                                    
+                                    <div style={{
+                                        position: 'absolute', bottom: '-10px', right: '-10px',
+                                        width: '60%', maxWidth: '300px'
+                                    }}>
+                                        <img src={enhanceGridImg} alt="Enhanced Productivity" style={{ width: '100%', height: 'auto', borderRadius: '12px' }} />
                                     </div>
                                 </div>
                             </div>
@@ -271,35 +328,220 @@ const Features = () => {
                     </div>
                 </div>
 
-                    {/* Partnering Grid */}
-                    <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                        <h2 style={{ fontSize: '2.5rem' }}>The Key Benefits of <br/> Partnering</h2>
+                    {/* Partnering Grid Section */}
+                    {/* Header */}
+                    <div id="why-us" style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '800px', margin: '0 auto 4rem auto' }}>
+                        <div style={{ 
+                            display: 'inline-block', padding: '0.4rem 1.2rem', borderRadius: '50px', 
+                            border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.05)',
+                            fontSize: '0.85rem', color: '#e2e8f0', marginBottom: '1.5rem' 
+                        }}>
+                             Why Choose Us
+                        </div>
+                        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.2', fontWeight: '700' }}>
+                           The Key Benefits of <br/> <span style={{ color: '#94a3b8' }}>Partnering</span>
+                        </h2>
                     </div>
 
-                    <div className="grid-3">
+                    {/* New 6-Card Grid */}
+                    <div style={{ 
+                        display: 'grid', 
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+                        gap: '1.5rem'
+                    }}>
                         {[
-                            { icon: Globe, title: 'Global Reach', desc: 'Expand your AI solutions to a worldwide audience.' },
-                            { icon: Shield, title: 'Secure Infrastructure', desc: 'Bank-grade security for all transactions.' },
-                            { icon: Layers, title: 'Scalable Architecture', desc: 'Grow your resources as your needs increase.' },
-                            { icon: Zap, title: 'Instant Deployment', desc: 'Go live with your models in seconds.' },
-                            { icon: Cpu, title: 'Advanced Hardware', desc: 'Access top-tier GPUs and TPUs.' },
-                            { icon: MessageSquare, title: '24/7 Support', desc: 'Expert assistance whenever you need it.' }
-                        ].map((feature, i) => (
-                            <div key={i} className="glass-card" style={{ padding: '2rem', textAlign: 'center' }}>
-                                 <div style={{ 
-                                     width: '60px', height: '60px', borderRadius: '16px', background: 'rgba(255,255,255,0.05)',
-                                     margin: '0 auto 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                     color: '#d8b4fe'
-                                 }}>
-                                     <feature.icon size={28} />
-                                 </div>
-                                 <h3 style={{ fontSize: '1.25rem', marginBottom: '0.8rem' }}>{feature.title}</h3>
-                                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{feature.desc}</p>
+                            { 
+                                title: 'AI Tools Library', 
+                                desc: 'Explore curated AI tools for automation, analysis, and creation.',
+                                img: aiToolsImg 
+                            },
+                            { 
+                                title: 'AI Adoption Frameworks', 
+                                desc: 'Guides to integrate AI into existing workflows and teams.',
+                                img: aiAdoptionImg 
+                            },
+                            { 
+                                title: 'AI Tutorials & Learning Paths', 
+                                desc: 'Structured guides for beginners to advanced practitioners.',
+                                img: aiTutorialsImg 
+                            },
+                            { 
+                                title: 'AI Use Case Solutions', 
+                                desc: 'Industry-specific AI implementations and examples.',
+                                img: aiUseCasesImg 
+                            },
+                            { 
+                                title: 'Research + Case Study Vault', 
+                                desc: 'Documented success stories and applied AI research.',
+                                img: aiResearchImg 
+                            },
+                            { 
+                                title: 'AI Ethics & Best Practices', 
+                                desc: 'Responsible AI usage, compliance, and governance insights.',
+                                img: aiEthicsImg 
+                            }
+                        ].map((card, i) => (
+                            <div key={i} className="" style={{ 
+                                padding: '36px', 
+                                textAlign: 'center',
+                                borderRadius: '25px',
+                                border: '1px solid #747474',
+                                background: '#0C0C0C',
+                                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px',
+                                height: '328px',
+                                position: 'relative', overflow: 'hidden'
+                            }}>
+                                 <h3 style={{ fontSize: '1.35rem', marginBottom: '0.8rem', fontWeight: 'bold' }}>{card.title}</h3>
+                                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '2rem', maxWidth: '90%' }}>
+                                     {card.desc}
+                                 </p>
+                                 
+                                 <img src={card.img} alt={card.title} style={{ 
+                                     width: '236px', height: '170px',
+                                     position: 'absolute',
+                                     top: '158px',
+                                     left: '50%',
+                                     transform: 'translateX(-50%)',
+                                     filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.5))'
+                                 }} />
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            <section id="faq" style={{ padding: '6rem 0' }}>
+                <div className="container">
+                    
+                    {/* Top Row: Graphic + Title */}
+                    <div className="bento-row" style={{ alignItems: 'center', gap: '4rem', marginBottom: '4rem' }}>
+                        
+                        {/* Left: FAQ Graphic */}
+                        <div style={{ 
+                            flex: '1', height: '300px', 
+                            display: 'flex', flexDirection: 'column', 
+                            justifyContent: 'center', alignItems: 'center',
+                            borderRadius: '25px',
+                            border: '1px solid #747474',
+                            background: 'linear-gradient(180deg, #0C0C0C 0%, rgba(12, 12, 12, 0.20) 100%)',
+                            position: 'relative', overflow: 'hidden'
+                        }}>
+                             <img src={commonQuestionsImg} alt="Common Questions" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }} />
+                        </div>
+
+                        {/* Right: Header */}
+                        <div style={{ flex: '1' }}>
+                            <div style={{ 
+                                display: 'inline-block', padding: '0.4rem 1.2rem', borderRadius: '50px', 
+                                border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.05)',
+                                fontSize: '0.85rem', color: '#e2e8f0', marginBottom: '1.5rem' 
+                            }}>
+                                 Common Questions
+                            </div>
+                            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: '1.1', fontWeight: '700' }}>
+                                Your Questions <br/> About <span style={{ color: '#94a3b8' }}>AIHubPro</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    {/* Bottom: Questions Grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
+                        {faqs.map((faq, i) => (
+                            <div key={i} className="glass-card" 
+                                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                style={{ 
+                                    padding: '1.5rem 2rem', 
+                                    cursor: 'pointer', transition: 'all 0.3s ease',
+                                    background: openFaq === i ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.03)',
+                                    display: 'flex', flexDirection: 'column',
+                                    border: openFaq === i ? '1px solid rgba(255,255,255,0.2)' : '1px solid rgba(255,255,255,0.08)'
+                                }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                                    <span style={{ fontSize: '1.1rem', fontWeight: '500' }}>{faq.q}</span>
+                                    <div style={{ 
+                                        width: '32px', height: '32px', borderRadius: '50%', background: 'white', flexShrink: 0,
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                                        transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)'
+                                    }}>
+                                        {openFaq === i ? <Minus size={18} color="black" strokeWidth={2.5} /> : <Plus size={18} color="black" strokeWidth={2.5} />}
+                                    </div>
+                                </div>
+                                <div style={{ 
+                                    maxHeight: openFaq === i ? '300px' : '0',
+                                    opacity: openFaq === i ? 1 : 0,
+                                    marginTop: openFaq === i ? '1rem' : '0',
+                                    paddingTop: openFaq === i ? '1rem' : '0',
+                                    borderTop: openFaq === i ? '1px solid rgba(255,255,255,0.1)' : '1px solid transparent',
+                                    overflow: 'hidden',
+                                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem'
+                                }}>
+                                    {faq.a}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Innovation CTA Section */}
+            <section style={{ 
+                padding: '80px 0', 
+                backgroundImage: `url(${innovationBgImg})`, 
+                backgroundSize: 'cover', 
+                backgroundPosition: 'center',
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
+            }}>
+                <div className="container" style={{ width: '100%', maxWidth: '1200px' }}>
+                    <div style={{ 
+                        background: '#0C0C0C', 
+                        padding: '80px 40px', 
+                        borderRadius: '40px', 
+                        textAlign: 'center',
+                        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem',
+                        boxShadow: '0 20px 50px rgba(0,0,0,0.3)'
+                    }}>
+                        {/* Pill */}
+                        <div style={{ 
+                            display: 'inline-block', padding: '0.4rem 1.2rem', borderRadius: '50px', 
+                            border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.05)',
+                            fontSize: '0.85rem', color: '#e2e8f0'
+                        }}>
+                             Secure, Fast, and Flexible
+                        </div>
+
+                        {/* Title */}
+                        <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: '1.1', fontWeight: '700', color: 'white' }}>
+                            Take the Next Step Toward <br/> <span style={{ color: '#94a3b8' }}>AI-Driven Innovation Today</span>
+                        </h2>
+
+                        {/* Subtitle */}
+                        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px' }}>
+                            Join AIHubPro and start applying AI with clarity, confidence, and speed.
+                        </p>
+
+                        {/* Button */}
+                        <button className="btn" style={{ 
+                            marginTop: '1rem',
+                            background: 'white', color: 'black', 
+                            padding: '1rem 2.5rem', borderRadius: '50px', fontWeight: '600', fontSize: '1rem',
+                            border: 'none', cursor: 'pointer', transition: 'transform 0.2s',
+                            boxShadow: '0 10px 20px rgba(255, 255, 255, 0.1)'
+                        }}>
+                            Get Started with AIHubPro
+                        </button>
+
+                        {/* Footer Text */}
+                        <p style={{ color: '#525252', fontSize: '0.9rem', fontStyle: 'italic', marginTop: '0.5rem' }}>
+                            Takes less than a minute!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
         </>
     );
 };
