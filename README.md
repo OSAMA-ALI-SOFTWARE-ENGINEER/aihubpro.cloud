@@ -1,21 +1,27 @@
-<<<<<<< HEAD
-# React + Vite
+# AIHubPro Cloud
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# aihubpro.cloud
 AIHubPro is a centralized platform for AI tools, tutorials, and real-world case studies helping professionals turn artificial intelligence into measurable outcomes.
->>>>>>> 5b99b51aee2ea8baf0df3234034e9430a6fef946
+
+## Development Setup
+
+This project is built with React + Vite.
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm
+
+### getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Deployment
+
+This project is configured to automatically deploy to Hostinger via GitHub Actions on push to the `main` branch.
